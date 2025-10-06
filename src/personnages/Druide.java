@@ -23,11 +23,12 @@ public class Druide {
 	public void boosterGaulois(Gaulois gaulois) {
 		String nomGaulois = gaulois.getNom();
 		if (chaudron.resterPotion()) {
-			if(nomGaulois == "Obelix") {
+			if(nomGaulois.equals("Obelix")) {
 				parler("ma belle tu peux pas");
-			}
-			else {
-				
+			} else {
+				int forcePotion = chaudron.prendreLouche();
+				gaulois.boirePotion(forcePotion);
+				parler("Tiens "+nomGaulois+" un peu de potion magique");
 			}
 		}
 		else {

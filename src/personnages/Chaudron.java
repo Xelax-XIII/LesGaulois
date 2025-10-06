@@ -21,7 +21,13 @@ public class Chaudron {
 	}
 
 	public int prendreLouche() {
-
+		if (qte == 0) {
+			forcePotion = 0;
+			return 0;
+		} else {
+			qte = qte - 1;
+			return forcePotion;
+		}
 	}
 
 	public int getQte() {
