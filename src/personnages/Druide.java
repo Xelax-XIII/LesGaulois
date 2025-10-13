@@ -2,7 +2,7 @@ package personnages;
 
 public class Druide {
 	private String nom;
-	private int force;
+	private int force; // present dans le diagramme UML du TP
 	private Chaudron chaudron;
 	
 	public Druide(String nom, int force) {
@@ -17,7 +17,7 @@ public class Druide {
 	
 	public void fabriquerPotion(int qte, int forcePotion) {
 		chaudron.remplirChaudron(qte, forcePotion);
-		parler("j'ai concoct� " + chaudron.getQte() + " dose de portion magique. Elle a une force de " + chaudron.getForcePotion());
+		parler("j'ai concocte " + chaudron.getQte() + " dose de portion magique. Elle a une force de " + chaudron.getForcePotion());
 	}
 	
 	public void boosterGaulois(Gaulois gaulois) {
