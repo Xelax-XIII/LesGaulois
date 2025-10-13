@@ -17,13 +17,13 @@ public class Druide {
 	
 	public void fabriquerPotion(int qte, int forcePotion) {
 		chaudron.remplirChaudron(qte, forcePotion);
-		parler("j'ai concocté " + chaudron.getQte() + " dose de portion magique. Elle a une force de " + chaudron.getForcePotion());
+		parler("j'ai concoctï¿½ " + chaudron.getQte() + " dose de portion magique. Elle a une force de " + chaudron.getForcePotion());
 	}
 	
 	public void boosterGaulois(Gaulois gaulois) {
 		String nomGaulois = gaulois.getNom();
 		if (chaudron.resterPotion()) {
-			if(nomGaulois.equals("Obelix")) {
+			if(nomGaulois != null && nomGaulois.equals("Obelix")) {
 				parler("ma belle tu peux pas");
 			} else {
 				int forcePotion = chaudron.prendreLouche();
