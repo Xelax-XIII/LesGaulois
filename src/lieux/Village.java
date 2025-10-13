@@ -1,5 +1,4 @@
 package lieux;
-import java.util.Iterator;
 
 import personnages.Gaulois;
 
