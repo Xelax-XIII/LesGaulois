@@ -12,7 +12,7 @@ public class TestGaulois {
 		Romain brutus =  new Romain("brutus", 14);
 		Druide panoramix = new Druide("panoramix", 2);
 		asterix.parler("Bonjour obelix");
-		obelix.parler("Bonjour asterix, sanglier manger tout ça tout ça ?");
+		obelix.parler("Bonjour asterix, sanglier manger tout ï¿½a tout ï¿½a ?");
 		asterix.parler("oui miam");
 		System.out.println("foret " + asterix.getNom() + " et " + obelix.getNom() + " paf trouver : " + minus.getNom());
 		for (int i = 0; i < 3; i++) {
