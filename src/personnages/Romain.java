@@ -37,23 +37,21 @@ public class Romain {
 	    Equipement[] equipementEjecte = null;
 	    int oldForce = force;
 
-	    forceCoup = calculResistanceEquipement(forceCoup); // Sera 0 si le coup est paré
+	    forceCoup = calculResistanceEquipement(forceCoup);
 	    
-	    // On enlève le "if (forceCoup <= 0)" qui était faux
-	    
-	    force -= forceCoup; // La force diminue (ou reste la même si coup paré)
+	    force -= forceCoup;
 
 	    if (force == oldForce && force > 0) {
 	        parler("Mon equipement m'a totalement protege.");        
-	    } else if (force <= 0 && oldForce > 0){ // S'il meurt VRAIMENT
-	        equipementEjecte = ejecterEquipement(); // Il éjecte les trophées
+	    } else if (force <= 0){ // ← SIMPLIFIE : enlève la condition oldForce > 0
+	        equipementEjecte = ejecterEquipement();
 	        parler("J'abandonne...");
 	        estVainqueur = true;
 	    } else if (force > 0) {
 	        parler("aie");
 	    }
 	    
-	    return equipementEjecte; // Retourne les trophées (ou null)
+	    return equipementEjecte;
 	}
 	
 	private int calculResistanceEquipement(int forceCoup) {
