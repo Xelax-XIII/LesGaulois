@@ -1,5 +1,7 @@
 package personnages;
 
+import objet.Chaudron;
+
 public class Druide {
 	private String nom;
 	private int force; // present dans le diagramme UML du TP

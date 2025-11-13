@@ -49,7 +49,6 @@ public class Romain {
 			} else if (force <= 0 && oldForce > 0){
 				equipementEjecte = ejecterEquipement();
 				parler("J'abandonne...");
-				System.out.println("je fait un test");
 				estVainqueur = true;
 			} else if (force > 0) {
 				parler("aie");
