@@ -28,11 +28,11 @@ public class Scenario {
 		minus.parler("UN GAU... UN GAUGAU...");
 		do {
 			asterix.frapper(minus);
-		} while (!minus.isFainted());
+		} while (!minus.estVainqueur());
 		milexcus.parler("UN GAU... UN GAUGAU...");
 		do {
 			asterix.frapper(milexcus);
-		} while (!milexcus.isFainted());
+		} while (!milexcus.estVainqueur());
 		
 //		Partie a decommenter
 		
