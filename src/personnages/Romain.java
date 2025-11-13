@@ -9,6 +9,7 @@ public class Romain {
 	private Equipement[] equipements = new Equipement[2];
 	private int nbEquipement=0;
 	private int force;
+	private boolean isFainted=false;
 	
 	private void isInvariantVerified(int force) {
 		assert(force >= 0);
@@ -18,6 +19,10 @@ public class Romain {
 		this.nom = nom;
 		this.force = force;
 		isInvariantVerified(force);
+	}
+
+	public boolean isFainted() {
+		return isFainted;
 	}
 
 	public String getNom() {
@@ -30,13 +35,19 @@ public class Romain {
 	
 	public Equipement[] recevoirCoup(int forceCoup) {
 		Equipement[] equipementEjecte = null;
+		int oldForce = force;
+
 		forceCoup = calculResistanceEquipement(forceCoup);
 		force -= forceCoup;
-		if (force >= 0) {
-			parler("Aïe");        
-		} else {
+
+		if (force == oldForce && force > 0) {
+			parler("Mon equipement m'a totalement protege.");        
+		} else if (force <= 0 && oldForce > 0){
 			equipementEjecte = ejecterEquipement();
 			parler("J'abandonne...");
+			isFainted = true;
+		} else if (force > 0) {
+			parler("aie");
 		}
 		return equipementEjecte;
 	}
@@ -59,6 +70,9 @@ public class Romain {
 		}
 		parler(texte);
 		forceCoup -= resistanceEquipement;
+		if (forceCoup < 0) {
+			forceCoup = 0;
+		}
 		return forceCoup;
 	}
 
